@@ -27,4 +27,8 @@ public class TimeEntryService {
     public void deleteTimeEntry(Long id) {
         timeEntryRepository.deleteById(id);
     }
+
+    public TimeEntry updateTimeEntry(Long id, TimeEntry timeEntry) {
+        return timeEntry;
+    }
 }

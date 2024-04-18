@@ -27,4 +27,8 @@ public class UserService {
     public void deleteUser(Long id) {
         userRepository.deleteById(id);
     }
+
+    public User_Task updateUser(Long id, User_Task user) {
+        return user;
+    }
 }
