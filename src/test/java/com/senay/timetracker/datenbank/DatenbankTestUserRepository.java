@@ -19,7 +19,7 @@ import static org.junit.jupiter.api.Assertions.assertNull;
 @DataJpaTest
 @AutoConfigureTestDatabase(replace = AutoConfigureTestDatabase.Replace.NONE)
 @Rollback(false)
-public class UserRepositoryTest {
+public class DatenbankTestUserRepository {
 
     @Autowired
     private UserRepository userRepository;

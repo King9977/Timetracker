@@ -2,6 +2,7 @@ package com.senay.timetracker.controller;
 
 import com.senay.timetracker.entity.User_Task;
 import com.senay.timetracker.service.UserService;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -19,17 +20,17 @@ public class UserController {
     }
 
     @PostMapping
-    public User_Task createUser(@RequestBody User_Task user) {
+    public User_Task createUser(@Valid @RequestBody User_Task user) {
         return userService.createUser(user);
     }
 
     @GetMapping("/{id}")
-    public User_Task getUserById(@PathVariable Long id) {
+    public User_Task getUserById(@Valid @PathVariable Long id) {
         return userService.getUserById(id);
     }
 
     @DeleteMapping("/{id}")
-    public void deleteUser(@PathVariable Long id) {
+    public void deleteUser(@Valid @PathVariable Long id) {
         userService.deleteUser(id);
     }
 }
