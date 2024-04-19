@@ -3,7 +3,6 @@ package com.senay.timetracker.entity;
 import jakarta.persistence.*;
 
 @Entity
-
 public class User_Task {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -13,6 +12,13 @@ public class User_Task {
     private String email;
     private String passwordHash;
     private Long roleId;
+
+    public User_Task(String s, String mail, String s1, long l) {
+    }
+
+    public User_Task() {
+
+    }
 
     // Getters and setters
     public Long getId() {

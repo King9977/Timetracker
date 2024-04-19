@@ -12,7 +12,7 @@ import org.springframework.test.annotation.Rollback;
 @DataJpaTest()
 @AutoConfigureTestDatabase(replace = AutoConfigureTestDatabase.Replace.NONE)
 @Rollback(false)
-class DBTests {
+class DBTestsRole {
 
     @Autowired
     private RoleRepository roleRepository;
@@ -20,12 +20,12 @@ class DBTests {
     @Test
     void insertRole() {
         Role roleA = new Role();
-        roleA.setName("Abteilung A");
+        roleA.setName("Admin");
         Role savedRoleA = this.roleRepository.save(roleA);
         Assertions.assertNotNull(savedRoleA.getId());
 
         Role roleB = new Role();
-        roleB.setName("Abteilung B");
+        roleB.setName("User");
         Role savedRoleB = this.roleRepository.save(roleB);
         Assertions.assertNotNull(savedRoleB.getId());
     }
